@@ -2,11 +2,6 @@ package com.allapis;
 
 import static io.restassured.RestAssured.given;
 
-import net.minidev.json.JSONObject;
-import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
-import static org.hamcrest.Matchers.*;
-
 import org.testng.annotations.Test;
 
 public class Day2ByusingPOJO {

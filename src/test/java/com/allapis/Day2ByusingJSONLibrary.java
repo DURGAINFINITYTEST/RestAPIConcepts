@@ -18,11 +18,16 @@ public class Day2ByusingJSONLibrary {
 		myData.put("name", "Prasadkatak");
 		myData.put("job", "tester123");
 
-		given().contentType("application/json").body(myData.toString())
+		given()
+		.contentType("application/json")
+		.body(myData.toString())
+		
 
-				.when().post("https://reqres.in/api/users")
+		.when()
+		.post("https://reqres.in/api/users")
 
-				.then().statusCode(201);
+		.then()
+		.statusCode(201);
 
 	}
 

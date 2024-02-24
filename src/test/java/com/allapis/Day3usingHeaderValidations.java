@@ -17,10 +17,12 @@ public class Day3usingHeaderValidations {
 	void getHeaderValidations() {
 		io.restassured.response.Response res = given()
 
-				.when().get("https://www.google.com/");
+				.when()
+				.get("https://www.google.com/");
 
 		/*
-		 * .header("Content-Type", "text/html; charset=ISO-8859-1") .and()
+		 * .header("Content-Type", "text/html; charset=ISO-8859-1")
+		 * .and()
 		 * .header("Content-Encoding", "gzip");
 		 * 
 ` 		 */
@@ -33,7 +35,7 @@ public class Day3usingHeaderValidations {
 		Headers totalHeaders = res.getHeaders();
 		for (Header oneByOne : totalHeaders) {
 			System.out.println(oneByOne.getName() + "  and  " + oneByOne.getValue());
-
+			
 		}
 	}
 }

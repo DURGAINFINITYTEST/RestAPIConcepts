@@ -31,19 +31,18 @@ public class Day3CookiesAndHeaders {
 
 		Response res = given()
 
-				.when()
-				.get("https://www.google.com/");
+				.when().get("https://www.google.com/");
 
-		String Cookie = res.getCookie("AEC"); 
+		String Cookie = res.getCookie("AEC");
 		System.out.println(Cookie);// -------------print the cookie value
 
-		Map<String, String> cookie_value = res.getCookies();
-		System.out.println(cookie_value.keySet()); // keys information
+		Map<String, String> cookie_values = res.getCookies();
+		System.out.println(cookie_values.keySet()); // keys information
 
-		for (String k : cookie_value.keySet()) {
+		for (String k : cookie_values.keySet()) {
 
-			//String cookieName = res.getCookie(k);
-			System.out.println(k + "    :    " + cookie_value);
+			String cookievalues = res.getCookie(k);
+			System.out.println(k + "    :    " + cookievalues);
 
 		}
 

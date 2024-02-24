@@ -1,43 +1,57 @@
 package com.allapis;
 
-import org.testng.annotations.Test;
-import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
-import static org.hamcrest.Matchers.*;
+import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.when;
+import static org.hamcrest.Matchers.equalTo;
 
 import java.util.HashMap;
 
+import org.testng.annotations.Test;
+
 public class HttpRequests {
+
 	public static int id = 0;
 
 	@Test(priority = 1)
 	void getUser() {
 
-		given()
-
-				.when()
+		when()
 
 				.get("https://reqres.in/api/users?page=2")
 
-				.then()
-				.statusCode(200) // statuscode
-				.body("page", equalTo(2)) // body
+				.then().statusCode(200) // statuscode
+				.body("page", equalTo(2)) // body6+
 				.log().all(); // display all body
 
 	}
 
 	@Test(priority = 2)
 	void createUser() {
-		HashMap map = new HashMap();
-		map.put("name", "morpheus");
-		map.put("job", "leader");
 
-		id = given().contentType("application/json").body(map)
+		/*
+		 * HashMap map = new HashMap(); map.put("name", "morpheus"); map.put("job",
+		 * "leader");
+		 * 
+		 * given() .contentType("application/json") .body(map)
+		 * 
+		 * .when()
+		 * 
+		 * .post("https://reqres.in/api/users")
+		 * 
+		 * .then() .statusCode(201);
+		 */
+
+		HashMap map = new HashMap();
+		map.put("name", "morpheuss1");
+		map.put("job", "lead");
+
+		id = given()
+
+				.contentType("application/json").body(map)
 
 				.when()
 
-				.post("https://reqres.in/api/users")
-				.jsonPath().getInt("id");
+				.post("https://reqres.in/api/users").jsonPath().getInt("id");
 
 	}
 
@@ -45,19 +59,16 @@ public class HttpRequests {
 	void updateUser() {
 
 		HashMap map1 = new HashMap();
-		map1.put("name", "morpheus");
+		map1.put("name", "morpheus1");
 		map1.put("job", "zion resident");
 
 		given()
 
-				
-				.contentType("application/json")
-				.body(map1)
-				.when()
-				.post("https://reqres.in/api/users/" + id)
+				.contentType("application/json").body(map1)
 
-				.then()
-				.statusCode(201) // statuscode for creating user
+				.when().put("https://reqres.in/api/users/" + id)
+
+				.then().statusCode(200) // statuscode for creating user
 				.log().all(); // display
 
 	}
@@ -65,7 +76,7 @@ public class HttpRequests {
 	@Test(priority = 4, dependsOnMethods = { "updateUser" })
 	void deleteUser() {
 
-		when().delete("https://reqres.in/api/users/2")
+		when().delete("https://reqres.in/api/users/" + id)
 
 				.then().statusCode(204).log().all();
 	}

@@ -28,11 +28,16 @@ public class Day2DiffwaysToCreatePostHashMap {
 
 //		String coursesarr[] = { "C", "C++" };
 //		data.put("courses", coursesarr);
-		given().contentType("application/json").body(data)
+		given()
+		.contentType("application/json")
+		.body(data)
 
-				.when().post("https://reqres.in/api/users")
+	   .when()
+	   .post("https://reqres.in/api/users")
 
-				.then().statusCode(201).body("name", equalTo("Prasad"));
+		.then()
+		.statusCode(201)
+		.body("name", equalTo("Prasad"));
 
 	}
 
@@ -40,9 +45,11 @@ public class Day2DiffwaysToCreatePostHashMap {
 	void testDelete() {
 		given()
 
-				.when().delete("https://reqres.in/api/users")
+				.when()
+				.delete("https://reqres.in/api/users")
 
-				.then().statusCode(204);
+				.then()
+				.statusCode(204);
 
 	}
 

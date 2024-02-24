@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.allapis.Day3usingHeaderValidations">
+      <class name="com.allapis.Day5XMLbodyFileUploadAndLoad">
         <methods>
-          <include name="getHeaderValidations"/>
+          <include name="getAnother"/>
         </methods>
-      </class> <!-- com.allapis.Day3usingHeaderValidations -->
+      </class> <!-- com.allapis.Day5XMLbodyFileUploadAndLoad -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

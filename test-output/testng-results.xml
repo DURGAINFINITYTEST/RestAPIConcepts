@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-22T11:47:58Z" name="Default suite" finished-at="2023-06-22T11:48:05Z" duration-ms="6361">
+  <suite started-at="2023-10-23T09:12:44Z" name="Default suite" finished-at="2023-10-23T09:12:52Z" duration-ms="8179">
     <groups>
     </groups>
-    <test started-at="2023-06-22T11:47:58Z" name="Default test" finished-at="2023-06-22T11:48:05Z" duration-ms="6361">
-      <class name="com.allapis.Day4validations">
-        <test-method signature="responce()[pri:0, instance:com.allapis.Day4validations@6d07a63d]" started-at="2023-06-22T11:47:59Z" name="responce" finished-at="2023-06-22T11:48:05Z" duration-ms="6245" status="PASS">
+    <test started-at="2023-10-23T09:12:44Z" name="Default test" finished-at="2023-10-23T09:12:52Z" duration-ms="8179">
+      <class name="com.allapis.HttpRequests">
+        <test-method signature="getUser()[pri:1, instance:com.allapis.HttpRequests@13d4992d]" started-at="2023-10-23T09:12:44Z" name="getUser" finished-at="2023-10-23T09:12:49Z" duration-ms="5195" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- responce -->
-      </class> <!-- com.allapis.Day4validations -->
+        </test-method> <!-- getUser -->
+        <test-method signature="createUser()[pri:2, instance:com.allapis.HttpRequests@13d4992d]" started-at="2023-10-23T09:12:49Z" name="createUser" finished-at="2023-10-23T09:12:50Z" duration-ms="1199" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUser -->
+        <test-method signature="updateUser()[pri:3, instance:com.allapis.HttpRequests@13d4992d]" started-at="2023-10-23T09:12:50Z" name="updateUser" finished-at="2023-10-23T09:12:52Z" depends-on-methods="com.allapis.HttpRequests.createUser" duration-ms="1107" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateUser -->
+        <test-method signature="deleteUser()[pri:4, instance:com.allapis.HttpRequests@13d4992d]" started-at="2023-10-23T09:12:52Z" name="deleteUser" finished-at="2023-10-23T09:12:52Z" depends-on-methods="com.allapis.HttpRequests.updateUser" duration-ms="537" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteUser -->
+      </class> <!-- com.allapis.HttpRequests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
